@@ -1,1 +1,56 @@
-<p>user-form works!</p>
+<div class="container-fluid">
+  <form [formGroup]="this.userFormGroup" (ngSubmit)="this.onSubmit()">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1>User Form</h1>
+      </div>
+      <div class="col-6 offset-3">
+        <label for="userNameInput" class="form-label">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="userNameInput"
+          placeholder="John Doe"
+          formControlName="userName"
+        />
+      </div>
+      <div class="col-6 offset-3 mt-3">
+        <label for="userEmailInput" class="form-label">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="userEmailInput"
+          placeholder="john@doe.com"
+          formControlName="userEmail"
+        />
+        <div *ngIf="!this.isEmailValid">
+          <small class="text-danger">Email Invalid</small>
+        </div>
+      </div>
+      <div class="col-12 text-center mt-3">
+        <button
+          class="btn btn-primary"
+          type="submit"
+          [disabled]="!this.userFormGroup.valid"
+        >
+          Submit
+        </button>
+      </div>
+    </div>
+  </form>
+  <div
+    class="row mt-5"
+    *ngIf="
+      this.userFormGroup.value.userName.length > 0 ||
+      this.userFormGroup.value.userEmail.length > 0
+    "
+  >
+    <div class="col-12 text-center">
+      <h1>User Details</h1>
+    </div>
+    <div class="col-6 offset-3">
+      <p>Name: {{ this.userFormGroup.value.userName }}</p>
+      <p>Email: {{ this.userFormGroup.value.userEmail }}</p>
+    </div>
+  </div>
+</div>
