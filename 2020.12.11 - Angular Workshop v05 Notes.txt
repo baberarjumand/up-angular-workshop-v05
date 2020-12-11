@@ -1,0 +1,22 @@
+Up Pay
+Angular Workshop v05 Notes
+Dec 11, 2020
+
+--
+
+Today's workshop targets:
+
+- Explore how to implement basic input forms
+
+- Explore how to implement basic validation on forms
+
+--
+
+References and Further Reading:
+
+Angular Forms Overview:
+https://angular.io/guide/forms-overview
+
+Angular Forms: Reactive vs Template-Driven Forms:
+https://angular.io/guide/forms-overview#key-differences
+
